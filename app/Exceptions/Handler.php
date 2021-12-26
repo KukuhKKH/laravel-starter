@@ -37,5 +37,12 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+
+        $this->renderable(function (\Illuminate\Auth\AuthenticationException $e, $request) {
+            if ($request->is('api/*')) {
+                report($e->getMessage());
+                return response()->error("Unauthorized", 401);
+            }
+        });
     }
 }

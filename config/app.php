@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
 
+        App\Providers\ResponseMacroServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,

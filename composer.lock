@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b55f0608cdbfcdc3fbf28b431ddd6b7c",
+    "content-hash": "753a6bd45b673004e52d8f33e8730cc3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1083,6 +1083,53 @@
                 "source": "https://github.com/Intervention/image/tree/master"
             },
             "time": "2019-11-02T09:15:47+00:00"
+        },
+        {
+            "name": "kukuhkkh/laravel-command",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KukuhKKH/laravel-command.git",
+                "reference": "e06e8bc147a2cfde518851bd5c22834da771bae4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KukuhKKH/laravel-command/zipball/e06e8bc147a2cfde518851bd5c22834da771bae4",
+                "reference": "e06e8bc147a2cfde518851bd5c22834da771bae4",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kukuhkkh\\LaravelCommand\\LaravelCommandProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kukuhkkh\\LaravelCommand\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kukuh Rahmadani",
+                    "email": "Krahmadani1@gmail.com"
+                }
+            ],
+            "description": "Create a Repository and Service class and trait using Artisan CLI",
+            "support": {
+                "issues": "https://github.com/KukuhKKH/laravel-command/issues",
+                "source": "https://github.com/KukuhKKH/laravel-command/tree/1.1.0"
+            },
+            "time": "2021-12-25T06:48:35+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -8603,5 +8650,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
