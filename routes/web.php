@@ -16,9 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-if(env("APP_DEBUG")) {
-    Route::group(['prefix' => 'dev'], function() {
-        //
-    });
-}
