@@ -4,12 +4,11 @@ namespace App\Exceptions;
 
 use Arr;
 use Exception;
-use GraphQL\Error\ClientAware;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Response;
 use Throwable;
 
-abstract class BaseException extends Exception implements ClientAware
+abstract class BaseException extends Exception
 {
     public function __construct(
         string $message = "",

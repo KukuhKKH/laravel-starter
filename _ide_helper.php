@@ -13506,6 +13506,35 @@
         {
                         \Illuminate\Routing\ResponseFactory::flushMacros();
         }
+                    /**
+         * 
+         *
+         * @see \App\Providers\ResponseServiceProvider::boot()
+         * @param mixed $data
+         * @param int $status
+         * @param int|null $code
+         * @param array|null $meta
+         * @static 
+         */ 
+        public static function success($data = null, $status = 200, $code = null, $meta = null)
+        {
+                        return \Illuminate\Routing\ResponseFactory::success($data, $status, $code, $meta);
+        }
+                    /**
+         * 
+         *
+         * @see \App\Providers\ResponseServiceProvider::boot()
+         * @param mixed $message
+         * @param mixed $data
+         * @param int $status
+         * @param int|null $code
+         * @param array|null $meta
+         * @static 
+         */ 
+        public static function error($message = null, $data = null, $status = 500, $code = null, $meta = null)
+        {
+                        return \Illuminate\Routing\ResponseFactory::error($message, $data, $status, $code, $meta);
+        }
          
     }
             /**
@@ -19213,6 +19242,46 @@
         public static function dropAuditableWithDeletes()
         {
                         return \Illuminate\Database\Schema\Blueprint::dropAuditableWithDeletes();
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\Routing { 
+            /**
+     * 
+     *
+     */ 
+        class ResponseFactory {
+                    /**
+         * 
+         *
+         * @see \App\Providers\ResponseServiceProvider::boot()
+         * @param mixed $data
+         * @param int $status
+         * @param int|null $code
+         * @param array|null $meta
+         * @static 
+         */ 
+        public static function success($data = null, $status = 200, $code = null, $meta = null)
+        {
+                        return \Illuminate\Routing\ResponseFactory::success($data, $status, $code, $meta);
+        }
+                    /**
+         * 
+         *
+         * @see \App\Providers\ResponseServiceProvider::boot()
+         * @param mixed $message
+         * @param mixed $data
+         * @param int $status
+         * @param int|null $code
+         * @param array|null $meta
+         * @static 
+         */ 
+        public static function error($message = null, $data = null, $status = 500, $code = null, $meta = null)
+        {
+                        return \Illuminate\Routing\ResponseFactory::error($message, $data, $status, $code, $meta);
         }
          
     }
