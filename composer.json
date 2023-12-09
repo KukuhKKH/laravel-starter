@@ -14,7 +14,7 @@
         "yajra/laravel-auditable": "^4.6"
     },
     "require-dev": {
-        "banglipai/laravel-generator": "^1.0",
+        "banglipai/laravel-generator": "^1.1",
         "barryvdh/laravel-ide-helper": "^2.13",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aba9e7e87bd1954f742103b28ed51753",
+    "content-hash": "426079d38c44d6e3624b3ac261121433",
     "packages": [
         {
             "name": "brick/math",
@@ -5772,16 +5772,16 @@
     "packages-dev": [
         {
             "name": "banglipai/laravel-generator",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:BangLipai/laravel-generator.git",
-                "reference": "ba799c1430b7c104519857c153d02ca8a933cb22"
+                "reference": "e69f04bc8c5a7361d3c0207623f600fdbd7da992"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BangLipai/laravel-generator/zipball/ba799c1430b7c104519857c153d02ca8a933cb22",
-                "reference": "ba799c1430b7c104519857c153d02ca8a933cb22",
+                "url": "https://api.github.com/repos/BangLipai/laravel-generator/zipball/e69f04bc8c5a7361d3c0207623f600fdbd7da992",
+                "reference": "e69f04bc8c5a7361d3c0207623f600fdbd7da992",
                 "shasum": ""
             },
             "require": {
@@ -5832,10 +5832,10 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/BangLipai/laravel-generator/tree/1.0.0",
+                "source": "https://github.com/BangLipai/laravel-generator/tree/1.1.0",
                 "issues": "https://github.com/BangLipai/laravel-generator/issues"
             },
-            "time": "2023-11-15T15:10:48+00:00"
+            "time": "2023-12-09T08:11:00+00:00"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
