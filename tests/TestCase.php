@@ -8,10 +8,12 @@ use Illuminate\Routing\Events\RouteMatched;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
+use Tests\Helpers\LazilyRefreshDatabase;
 
 abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
+    use LazilyRefreshDatabase;
 
     protected function setUp(): void
     {
