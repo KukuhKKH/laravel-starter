@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Carbon\Carbon;
 use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -28,6 +29,8 @@ use Yajra\Auditable\AuditableWithDeletesTrait;
  * @property null|int    $created_by
  * @property null|int    $updated_by
  * @property null|int    $deleted_by
+ *
+ * @method static Builder|User query()
  */
 class User extends Authenticatable
 {
