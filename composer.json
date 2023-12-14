@@ -8,7 +8,7 @@
         "php": "^8.3",
         "guzzlehttp/guzzle": "^7.8",
         "itsgoingd/clockwork": "^5.1",
-        "laravel/framework": "^10.35",
+        "laravel/framework": "^10.37",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "yajra/laravel-auditable": "^4.6"
@@ -19,7 +19,7 @@
         "fakerphp/faker": "^1.23.0",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
-        "mockery/mockery": "^1.6.6",
+        "mockery/mockery": "^1.8.7",
         "nunomaduro/collision": "^7.10",
         "nunomaduro/larastan": "^2.7",
         "phpunit/phpunit": "^10.5",
