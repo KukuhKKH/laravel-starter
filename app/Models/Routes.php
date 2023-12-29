@@ -56,6 +56,7 @@ class Routes extends Eloquent
      * @var array<string, string>
      */
     protected $casts = [
+        'key'        => 'string',
         'label'      => 'string',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
@@ -67,6 +68,7 @@ class Routes extends Eloquent
      * @var array<string>
      */
     protected $fillable = [
+        'key',
         'label',
     ];
 
