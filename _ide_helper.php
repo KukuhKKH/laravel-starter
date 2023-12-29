@@ -19359,6 +19359,19 @@
         {
                         return \Illuminate\Database\Schema\Blueprint::dropAuditableWithDeletes();
         }
+                    /**
+         * 
+         *
+         * @see \App\Providers\MigrationServiceProvider::register()
+         * @param int $singkat
+         * @param int $keterangan
+         * @param array $nullable
+         * @static 
+         */ 
+        public static function masterColumn($singkat = 50, $keterangan = 100, $nullable = [])
+        {
+                        return \Illuminate\Database\Schema\Blueprint::masterColumn($singkat, $keterangan, $nullable);
+        }
          
     }
      
