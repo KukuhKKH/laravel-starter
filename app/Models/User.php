@@ -6,7 +6,9 @@ namespace App\Models;
 use Carbon\Carbon;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -17,18 +19,20 @@ use Yajra\Auditable\AuditableWithDeletesTrait;
  * App\Models\User
  * @mixin Eloquent
  *
- * @property int         $id
- * @property string      $name
- * @property string      $email
- * @property null|Carbon $email_verified_at
- * @property string      $password
- * @property null|string $remember_token
- * @property null|Carbon $created_at
- * @property null|Carbon $updated_at
- * @property null|Carbon $deleted_at
- * @property null|int    $created_by
- * @property null|int    $updated_by
- * @property null|int    $deleted_by
+ * @property      int                    $id
+ * @property      string                 $name
+ * @property      string                 $email
+ * @property      null|Carbon            $email_verified_at
+ * @property      string                 $password
+ * @property      null|string            $remember_token
+ * @property      null|Carbon            $created_at
+ * @property      null|Carbon            $updated_at
+ * @property      null|Carbon            $deleted_at
+ * @property      null|int               $created_by
+ * @property      null|int               $updated_by
+ * @property      null|int               $deleted_by
+ *
+ * @property-read Collection|UserAkses[] $userAkses
  *
  * @method static Builder|User query()
  */
@@ -50,7 +54,7 @@ class User extends Authenticatable
     /**
      * The attributes that should be cast.
      *
-     * @var array
+     * @var array<string, string>
      */
     protected $casts = [
         'name'              => 'string',
@@ -69,7 +73,7 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var array<string>
      */
     protected $fillable = [
         'name',
@@ -81,4 +85,12 @@ class User extends Authenticatable
         'updated_by',
         'deleted_by',
     ];
+
+    /**
+     * @return HasMany|UserAkses
+     */
+    public function userAkses(): HasMany|UserAkses
+    {
+        return $this->hasMany('App\Models\UserAkses', 'user_id', 'id');
+    }
 }
