@@ -11,16 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_akses', function (Blueprint $table) {
+        Schema::create('grup_anggota', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedSmallInteger('k_akses');
-
-            $table->string('duplikasi', 50)->unique();
-            $table->tinyInteger('is_aktif')->default(0);
-
+            $table->unsignedSmallInteger('k_grup')->index();
+            $table->unsignedSmallInteger('k_grup_anggota')->index();
             $table->timestamps();
-            $table->auditable();
         });
     }
 
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_akses');
+        Schema::dropIfExists('grup_anggota');
     }
 };

@@ -2,44 +2,40 @@
 
 namespace App\Models;
 
-use App\Models\Traits\AktifFilter;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * App\Models\MAkses
+ * App\Models\MGrup
  *
- * @property      int                     $k_akses
- * @property      null|string             $singkat
- * @property      null|string             $keterangan
- * @property      null|int                $urutan
- * @property      int                     $is_aktif
+ * @property      int                      $k_grup
+ * @property      null|string              $singkat
+ * @property      null|string              $keterangan
  *
- * @property-read Collection|GrupAkses[]  $grupAkses
- * @property-read Collection|RouteAkses[] $routeAkses
- * @property-read Collection|UserAkses[]  $userAkses
+ * @property-read Collection|GrupAkses[]   $grupAkses
+ * @property-read Collection|GrupAnggota[] $grupAnggota
+ * @property-read Collection|GrupAnggota[] $grupAnggotas
+ * @property-read Collection|UserGrup[]    $userGrups
  *
- * @method static Builder|MAkses query()
+ * @method static Builder|MGrup query()
  */
-class MAkses extends Eloquent
+class MGrup extends Eloquent
 {
-    use AktifFilter;
-
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'm_akses';
+    protected $table = 'm_grup';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'k_akses';
+    protected $primaryKey = 'k_grup';
 
     /**
      * Indicates if the IDs are auto-incrementing.
@@ -56,8 +52,6 @@ class MAkses extends Eloquent
     protected $casts = [
         'singkat'    => 'string',
         'keterangan' => 'string',
-        'urutan'     => 'int',
-        'is_aktif'   => 'int',
     ];
 
     /**
@@ -75,8 +69,6 @@ class MAkses extends Eloquent
     protected $fillable = [
         'singkat',
         'keterangan',
-        'urutan',
-        'is_aktif',
     ];
 
     /**
@@ -84,22 +76,30 @@ class MAkses extends Eloquent
      */
     public function grupAkses(): HasMany|GrupAkses
     {
-        return $this->hasMany('App\Models\GrupAkses', 'k_akses', 'k_akses');
+        return $this->hasMany('App\Models\GrupAkses', 'k_grup', 'k_grup');
     }
 
     /**
-     * @return HasMany|RouteAkses
+     * @return HasMany|GrupAnggota
      */
-    public function routeAkses(): HasMany|RouteAkses
+    public function grupAnggota(): HasMany|GrupAnggota
     {
-        return $this->hasMany('App\Models\RouteAkses', 'k_akses', 'k_akses');
+        return $this->hasMany('App\Models\GrupAnggota', 'k_grup', 'k_grup');
     }
 
     /**
-     * @return HasMany|UserAkses
+     * @return HasMany|GrupAnggota
      */
-    public function userAkses(): HasMany|UserAkses
+    public function grupAnggotas(): HasMany|GrupAnggota
     {
-        return $this->hasMany('App\Models\UserAkses', 'k_akses', 'k_akses');
+        return $this->hasMany('App\Models\GrupAnggota', 'k_grup_anggota', 'k_grup');
+    }
+
+    /**
+     * @return HasMany|UserGrup
+     */
+    public function userGrups(): HasMany|UserGrup
+    {
+        return $this->hasMany('App\Models\UserGrup', 'k_grup', 'k_grup');
     }
 }
