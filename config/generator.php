@@ -143,10 +143,12 @@ return [
     | <singular> = <plural> : Custom mapping (default use Str::singular and Str::singular)
     */
     'plural'      => [
-        'm_akses'     => 'm_akses',
-        'routes'      => 'routes',
-        'route_akses' => 'route_akses',
-        'user_akses'  => 'user_akses',
+        'grup_anggota' => 'grup_anggota',
+        'grup_akses'   => 'grup_akses',
+        'm_akses'      => 'm_akses',
+        'routes'       => 'routes',
+        'route_akses'  => 'route_akses',
+        'user_akses'   => 'user_akses',
     ],
 
     /*
@@ -203,6 +205,13 @@ return [
     | <table-name>.jsonapi.child_data.<...> : Any other child table name
     */
     'options'     => [
+        'grup_akses' => [
+            'model' => [
+                'trait' => [
+                    'App\Models\Traits\AktifFilter'
+                ],
+            ]
+        ],
         'm_akses' => [
             'model' => [
                 'trait' => [
@@ -211,6 +220,13 @@ return [
             ]
         ],
         'route_akses' => [
+            'model' => [
+                'trait' => [
+                    'App\Models\Traits\AktifFilter'
+                ],
+            ]
+        ],
+        'user_grup' => [
             'model' => [
                 'trait' => [
                     'App\Models\Traits\AktifFilter'
