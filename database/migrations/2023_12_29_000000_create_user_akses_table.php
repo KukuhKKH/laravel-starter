@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedSmallInteger('k_akses');
 
-            $table->string('duplikasi', 50);
+            $table->string('duplikasi', 50)->unique();
             $table->tinyInteger('is_aktif')->default(0);
 
             $table->timestamps();
