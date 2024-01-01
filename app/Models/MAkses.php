@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property      null|int                $urutan
  * @property      int                     $is_aktif
  *
+ * @property-read Collection|GrupAkses[]  $grupAkses
  * @property-read Collection|RouteAkses[] $routeAkses
  * @property-read Collection|UserAkses[]  $userAkses
  *
@@ -77,6 +78,14 @@ class MAkses extends Eloquent
         'urutan',
         'is_aktif',
     ];
+
+    /**
+     * @return HasMany|GrupAkses
+     */
+    public function grupAkses(): HasMany|GrupAkses
+    {
+        return $this->hasMany('App\Models\GrupAkses', 'k_akses', 'k_akses');
+    }
 
     /**
      * @return HasMany|RouteAkses
