@@ -22,7 +22,7 @@ class GenerateRoutes extends Command
      *
      * @var string
      */
-    protected $description = 'Generate routes from backend/routes/admin';
+    protected $description = 'Generate routes from routes/*';
 
     /**
      * Execute the console command.
