@@ -10,53 +10,39 @@ class ResponseServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        Response::macro('success', function($data = null, int $status = 200, int $code = null, array $meta = null) {
-            $res = [
-                'success' => true,
-            ];
+        $formatResponse = function($data, int|null $code, array|null $meta): array {
+            $res = array_filter([
+                'data' => $data,
+                'code' => $code,
+            ]);
 
-            return $this->makeResponse($data, $res, $code, $meta, $status);
-        });
-
-        Response::macro('error', function($message = null, $data = null, int $status = 500, int $code = null, array $meta = null) {
-            $res = [
-                'success' => false,
-            ];
-
-            if ($message !== null) {
-                $res['message'] = $message;
-            }
-
-            return $this->makeResponse($data, $res, $code, $meta, $status);
-        });
-    }
-
-    /**
-     * @param mixed      $data
-     * @param array      $res
-     * @param int|null   $code
-     * @param array|null $meta
-     * @param int        $status
-     * @return JsonResponse
-     */
-    protected function makeResponse(mixed $data, array $res, ?int $code, ?array $meta, int $status): JsonResponse
-    {
-        if ($data !== null) {
-            $res['data'] = $data;
-        }
-
-        if ($code !== null) {
-            $res['code'] = $code;
-        }
-
-        if ($meta) {
-            foreach ($meta as $key => $value) {
-                if (!isset($res[$key])) {
-                    $res[$key] = $value;
+            if ($meta) {
+                foreach ($meta as $key => $value) {
+                    if (!isset($res[$key])) {
+                        $res[$key] = $value;
+                    }
                 }
             }
-        }
 
-        return Response::json($res, $status);
+            return $res;
+        };
+
+        Response::macro('success', function($data = null, int $status = 200, int $code = null, array $meta = null) use ($formatResponse): JsonResponse {
+            $res = array_merge([
+                'success' => true,
+            ], $formatResponse($data, $code, $meta));
+
+            return Response::json($res, $status);
+        });
+
+        Response::macro('error', function($message = null, $data = null, int $status = 500, int $code = null, array $meta = null) use ($formatResponse): JsonResponse {
+            $res = array_merge([
+                'success' => false,
+            ], array_filter([
+                'message' => $message,
+            ]), $formatResponse($data, $code, $meta));
+
+            return Response::json($res, $status);
+        });
     }
 }
