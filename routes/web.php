@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    $res = array_filter([
+        'app'  => config('app.name'),
+        'user' => user(),
+    ]);
+
+    return success($res);
 });
