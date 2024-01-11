@@ -8,9 +8,9 @@
         "php": "^8.3",
         "guzzlehttp/guzzle": "^7.8",
         "itsgoingd/clockwork": "^5.1",
-        "laravel/framework": "^10.39",
+        "laravel/framework": "^10.40",
         "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8",
+        "laravel/tinker": "^2.9",
         "yajra/laravel-auditable": "^4.6"
     },
     "require-dev": {
@@ -18,7 +18,7 @@
         "barryvdh/laravel-ide-helper": "^2.13",
         "fakerphp/faker": "^1.23.0",
         "laravel/pint": "^1.13",
-        "laravel/sail": "^1.26",
+        "laravel/sail": "^1.27",
         "mockery/mockery": "^1.6.7",
         "nunomaduro/collision": "^7.10",
         "nunomaduro/larastan": "^2.8",
