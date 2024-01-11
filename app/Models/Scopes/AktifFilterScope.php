@@ -18,7 +18,7 @@ class AktifFilterScope implements Scope
      */
     public function apply(Builder $builder, Model $model): void
     {
-        $builder->where('is_aktif', '=', 1);
+        $builder->where("{$model->getTable()}.is_aktif", '=', 1);
     }
 
     public function extend(Builder $builder): void
