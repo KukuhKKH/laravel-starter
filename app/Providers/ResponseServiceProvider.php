@@ -10,7 +10,7 @@ class ResponseServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $formatResponse = function($data, int|null $code, array|null $meta): array {
+        $formatResponse = function($data, ?int $code, ?array $meta): array {
             $res = array_filter([
                 'data' => $data,
                 'code' => $code,
