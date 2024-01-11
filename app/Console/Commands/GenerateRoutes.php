@@ -25,6 +25,19 @@ class GenerateRoutes extends Command
     protected $description = 'Generate routes from routes/*';
 
     /**
+     * Blacklist routes
+     *
+     * @var array $blacklist
+     */
+    protected array $blacklist;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->blacklist = config('routes.blacklist');
+    }
+
+    /**
      * Execute the console command.
      *
      * @throws Throwable
@@ -35,11 +48,16 @@ class GenerateRoutes extends Command
         $routes   = collect(Route::getRoutes());
 
         $result = $routes->map(function(\Illuminate\Routing\Route $route) {
+            $key = $this->fromController($route->getActionName());
+            if (in_array($key, $this->blacklist)) {
+                return null;
+            }
+
             return [
-                'key'   => $this->fromController($route->getActionName()),
+                'key'   => $key,
                 'label' => $route->getActionName(),
             ];
-        })->chunk(100);
+        })->filter()->chunk(100);
 
         $bar = $this->output->createProgressBar($result->count());
 
@@ -61,7 +79,11 @@ class GenerateRoutes extends Command
         $this->line('');
     }
 
-    public function fromController($controller): string
+    /**
+     * @param $controller
+     * @return string
+     */
+    protected function fromController($controller): string
     {
         $controller = Str::replace('App\\Http\\Controllers\\', '', $controller);
         $controller = Str::replace('Controller@', '.', $controller);
