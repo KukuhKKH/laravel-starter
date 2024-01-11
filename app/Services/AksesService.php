@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\User;
 use App\Models\UserAkses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 class AksesService
@@ -15,12 +16,19 @@ class AksesService
         return $this->fromController($controller);
     }
 
-    public function isAkses(User $user, int $kAkses): bool
+    public function isAkses(Collection $userAkses, int $kAkses): bool
     {
-        return UserAkses::query()
-            ->where('k_akses', '=', $kAkses)
+        return $userAkses->contains($kAkses);
+    }
+
+    public function getUserAkses(User $user, Collection $groupAkses): Collection
+    {
+        $userAkses = UserAkses::query()
             ->where('id', '=', $user->id)
-            ->exists();
+            ->get();
+
+        $kAkseses = $userAkses->pluck('k_akses');
+        return $kAkseses->merge($groupAkses->pluck('k_akses'))->unique();
     }
 
     /**
