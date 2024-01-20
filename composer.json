@@ -7,21 +7,15 @@
     "require": {
         "php": "^8.3",
         "guzzlehttp/guzzle": "^7.8",
-        "itsgoingd/clockwork": "^5.1",
-        "laravel/framework": "^10.40",
-        "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.9",
-        "yajra/laravel-auditable": "^4.6"
+        "laravel/framework": "^11.0",
+        "laravel/tinker": "^2.9"
     },
     "require-dev": {
-        "banglipai/laravel-generator": "^1.1.1",
-        "barryvdh/laravel-ide-helper": "^2.13",
-        "fakerphp/faker": "^1.23.0",
+        "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
-        "laravel/sail": "^1.27",
-        "mockery/mockery": "^1.6.7",
-        "nunomaduro/collision": "^7.10",
-        "nunomaduro/larastan": "^2.8",
+        "laravel/sail": "^1.26",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.0",
         "phpunit/phpunit": "^10.5",
         "spatie/laravel-ignition": "^2.4"
     },
@@ -35,10 +29,7 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        },
-        "files": [
-            "app/helpers.php"
-        ]
+        }
     },
     "scripts": {
         "post-autoload-dump": [
@@ -46,9 +37,7 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "@php artisan ide-helper:generate",
-            "@php artisan ide-helper:meta"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -58,6 +47,9 @@
         ]
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "11.x-dev"
+        },
         "laravel": {
             "dont-discover": []
         }
@@ -71,12 +63,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "git@github.com:BangLipai/laravel-generator.git"
-        }
-    ]
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
