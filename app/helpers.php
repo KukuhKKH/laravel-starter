@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 
 function user(string $guard = null): User|null
 {
@@ -14,7 +15,7 @@ function userId(string $guard = null): int|null
     return user($guard)?->id;
 }
 
-function success($data = null, $status = 200, $code = null, $meta = null)
+function success($data = null, $status = 200, $code = null, $meta = null): JsonResponse
 {
     return Response::success($data, $status, $code, $meta);
 }
