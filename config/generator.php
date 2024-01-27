@@ -19,11 +19,16 @@ return [
         '_*',
         'clockwork',
         'failed_jobs',
+        'grup_akses',
         'job_batches',
         'jobs',
+        'm_akses',
         'migrations',
         'password_reset_tokens',
         'personal_access_tokens',
+        'route_akses',
+        'user_akses',
+        'user_grup',
     ],
 
     /*
@@ -205,41 +210,6 @@ return [
     | <table-name>.jsonapi.child_data.<...> : Any other child table name
     */
     'options'     => [
-        'grup_akses' => [
-            'model' => [
-                'trait' => [
-                    'App\Models\Traits\AktifFilter'
-                ],
-            ]
-        ],
-        'm_akses' => [
-            'model' => [
-                'trait' => [
-                    'App\Models\Traits\AktifFilter'
-                ],
-            ]
-        ],
-        'route_akses' => [
-            'model' => [
-                'trait' => [
-                    'App\Models\Traits\AktifFilter'
-                ],
-            ]
-        ],
-        'user_grup' => [
-            'model' => [
-                'trait' => [
-                    'App\Models\Traits\AktifFilter'
-                ],
-            ]
-        ],
-        'user_akses' => [
-            'model' => [
-                'trait' => [
-                    'App\Models\Traits\AktifFilter'
-                ],
-            ]
-        ],
         'users' => [
             'model' => [
                 'base'  => ['Illuminate\Foundation\Auth\User', 'Authenticatable'],
