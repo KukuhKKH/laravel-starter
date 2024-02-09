@@ -8,21 +8,21 @@
         "php": "^8.3",
         "guzzlehttp/guzzle": "^7.8",
         "itsgoingd/clockwork": "^5.1",
-        "laravel/framework": "^10.42",
+        "laravel/framework": "^10.43",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.9",
         "yajra/laravel-auditable": "^4.6"
     },
     "require-dev": {
         "banglipai/laravel-generator": "^1.2",
-        "barryvdh/laravel-ide-helper": "^2.13",
-        "fakerphp/faker": "^1.23.0",
+        "barryvdh/laravel-ide-helper": "^2.14",
+        "fakerphp/faker": "^1.23.1",
         "laravel/pint": "^1.13",
-        "laravel/sail": "^1.27",
+        "laravel/sail": "^1.27.3",
         "mockery/mockery": "^1.6.7",
         "nunomaduro/collision": "^7.10",
         "nunomaduro/larastan": "^2.8",
-        "phpunit/phpunit": "^10.5",
+        "phpunit/phpunit": "^10.5.10",
         "spatie/laravel-ignition": "^2.4"
     },
     "autoload": {
