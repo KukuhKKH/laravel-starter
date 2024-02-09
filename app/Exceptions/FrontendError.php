@@ -4,20 +4,18 @@ namespace App\Exceptions;
 
 use Arr;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Response;
 use Throwable;
 
 class FrontendError extends BaseException
 {
     public function __construct(
-        string $message = "",
-        int $code = 0,
-        protected mixed $data = null,
+        string               $message = "",
+        int                  $code = 0,
+        protected mixed      $data = null,
         protected array|null $meta = null,
-        protected int $status = 200,
-        ?Throwable $previous = null,
-    )
-    {
+        protected int        $status = 200,
+        ?Throwable           $previous = null,
+    ) {
         parent::__construct($message, $code ?: $this->status, $previous);
     }
 
@@ -32,7 +30,7 @@ class FrontendError extends BaseException
                 'exception' => get_class($this),
                 'file'      => $this->getFile(),
                 'line'      => $this->getLine(),
-                'trace'     => collect($this->getTrace())->map(fn($trace) => Arr::except($trace, ['args']))->all(),
+                'trace'     => collect($this->getTrace())->map(fn ($trace) => Arr::except($trace, ['args']))->all(),
             ]);
         }
 

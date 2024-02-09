@@ -13,7 +13,7 @@ class MigrationServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        Blueprint::macro('masterColumn', function(int $singkat = 50, int $keterangan = 100, array $nullable = []) {
+        Blueprint::macro('masterColumn', function (int $singkat = 50, int $keterangan = 100, array $nullable = []) {
             /** @var Blueprint $this */
             $table = $this;
 
