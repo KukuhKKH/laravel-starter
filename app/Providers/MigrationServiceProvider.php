@@ -17,11 +17,16 @@ class MigrationServiceProvider extends ServiceProvider
             /** @var Blueprint $this */
             $table = $this;
 
+            $nullSingkat    = (bool)Arr::get($nullable, 'singkat', false);
+            $nullKeterangan = (bool)Arr::get($nullable, 'keterangan', false);
+
             $table->string('singkat', $singkat)
-                ->nullable(Arr::get($nullable['singkat'], true));
+                ->nullable($nullSingkat);
 
             $table->string('keterangan', $keterangan)
-                ->nullable(Arr::get($nullable['keterangan'], true));
+                ->nullable($nullKeterangan);
+
+            return $this;
         });
     }
 
