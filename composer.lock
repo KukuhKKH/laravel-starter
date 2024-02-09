@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5a8572d9914ccd62eabab398f42ae92",
+    "content-hash": "d0d489d356a2c4ef1ff804313b959529",
     "packages": [
         {
             "name": "banglipai/utility",

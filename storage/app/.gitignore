@@ -1,3 +1,5 @@
 *
 !public/
 !.gitignore
+!pre-commit
+!Hooks.php

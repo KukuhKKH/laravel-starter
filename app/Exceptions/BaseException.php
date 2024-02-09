@@ -11,14 +11,13 @@ use Throwable;
 abstract class BaseException extends Exception
 {
     public function __construct(
-        string $message = "",
-        int $code = 0,
-        protected mixed $data = null,
+        string               $message = "",
+        int                  $code = 0,
+        protected mixed      $data = null,
         protected array|null $meta = null,
-        protected int $status = 500,
-        ?Throwable $previous = null,
-    )
-    {
+        protected int        $status = 500,
+        ?Throwable           $previous = null,
+    ) {
         parent::__construct($message, $code, $previous);
     }
 
@@ -30,7 +29,7 @@ abstract class BaseException extends Exception
                 'exception' => get_class($this),
                 'file'      => $this->getFile(),
                 'line'      => $this->getLine(),
-                'trace'     => collect($this->getTrace())->map(fn($trace) => Arr::except($trace, ['args']))->all(),
+                'trace'     => collect($this->getTrace())->map(fn ($trace) => Arr::except($trace, ['args']))->all(),
             ];
         }
 

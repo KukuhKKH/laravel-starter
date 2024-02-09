@@ -31,11 +31,11 @@ class AppServiceProvider extends ServiceProvider
         if (App::runningInConsole()) {
             $logger = Log::getLogger();
             /** @noinspection PhpPossiblePolymorphicInvocationInspection */
-            $logger->pushHandler(new StreamHandler("php://stdout"));
+            $logger->pushHandler(new StreamHandler("php://stdout")); // @phpstan-ignore-line
         }
 
         if (App::runningInConsole()) {
-            Event::listen(function(Events\QueryExecuted $event) {
+            Event::listen(function (Events\QueryExecuted $event) {
                 if (!config('app.debug')) {
                     return;
                 }
@@ -59,19 +59,19 @@ class AppServiceProvider extends ServiceProvider
                 Log::debug("$event->connectionName - $query");
             });
 
-            Event::listen(function(Events\TransactionBeginning $event) {
+            Event::listen(function (Events\TransactionBeginning $event) {
                 Log::debug("$event->connectionName - begin");
             });
 
-            Event::listen(function(Events\TransactionCommitted $event) {
+            Event::listen(function (Events\TransactionCommitted $event) {
                 Log::debug("$event->connectionName - committed");
             });
 
-            Event::listen(function(Events\TransactionCommitting $event) {
+            Event::listen(function (Events\TransactionCommitting $event) {
                 Log::debug("$event->connectionName - committing");
             });
 
-            Event::listen(function(Events\TransactionRolledBack $event) {
+            Event::listen(function (Events\TransactionRolledBack $event) {
                 Log::debug("$event->connectionName - rollback");
             });
         }
