@@ -32,8 +32,6 @@ use Yajra\Auditable\AuditableWithDeletesTrait;
  * @property      null|int               $updated_by
  * @property      null|int               $deleted_by
  *
- * @property-read Collection|UserAkses[] $userAkses
- * @property-read Collection|UserGrup[]  $userGrups
  *
  * @method static Builder|User query()
  */
@@ -86,20 +84,4 @@ class User extends Authenticatable
         'updated_by',
         'deleted_by',
     ];
-
-    /**
-     * @return HasMany|UserAkses
-     */
-    public function userAkses(): HasMany|UserAkses
-    {
-        return $this->hasMany('App\Models\UserAkses', 'user_id', 'id');
-    }
-
-    /**
-     * @return HasMany|UserGrup
-     */
-    public function userGrups(): HasMany|UserGrup
-    {
-        return $this->hasMany('App\Models\UserGrup', 'user_id', 'id');
-    }
 }
