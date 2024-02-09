@@ -4,8 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "efd1a398b885ea137115c7c45d61ccc2",
+    "content-hash": "b5a8572d9914ccd62eabab398f42ae92",
     "packages": [
+        {
+            "name": "banglipai/utility",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BangLipai/utility.git",
+                "reference": "c182b809a91832380099faeb2d47dccbb0ae8154"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BangLipai/utility/zipball/c182b809a91832380099faeb2d47dccbb0ae8154",
+                "reference": "c182b809a91832380099faeb2d47dccbb0ae8154",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "8.12|^9.0|^10.0|^11.0",
+                "illuminate/database": "8.12|^9.0|^10.0|^11.0",
+                "illuminate/support": "8.12|^9.0|^10.0|^11.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BangLipai\\Utility\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BangLipai",
+                    "email": "developer.kukuh@gmail.com"
+                }
+            ],
+            "description": "Utility Laravel Starter",
+            "support": {
+                "issues": "https://github.com/BangLipai/utility/issues",
+                "source": "https://github.com/BangLipai/utility/tree/v1.1"
+            },
+            "time": "2024-02-09T03:28:03+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.11.0",
