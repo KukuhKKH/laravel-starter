@@ -16,6 +16,9 @@ $rules = [
             '=>' => 'align_single_space_minimal',
         ],
     ],
+    'braces'                      => [
+        'position_after_functions_and_oop_constructs' => 'next',
+    ],
     'phpdoc_indent'               => true,
     'no_blank_lines_after_phpdoc' => true,
     'class_attributes_separation' => [
