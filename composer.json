@@ -18,6 +18,7 @@
         "banglipai/laravel-generator": "^1.2",
         "barryvdh/laravel-ide-helper": "^2.14",
         "fakerphp/faker": "^1.23.1",
+        "friendsofphp/php-cs-fixer": "^3.49",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.27.3",
         "mockery/mockery": "^1.6.7",
@@ -42,9 +43,13 @@
         }
     },
     "scripts": {
+        "post-install-cmd": [
+            "php storage/app/Hooks.php"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "php storage/app/Hooks.php"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
