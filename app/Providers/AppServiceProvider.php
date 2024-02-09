@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
         if (App::runningInConsole()) {
             $logger = Log::getLogger();
             /** @noinspection PhpPossiblePolymorphicInvocationInspection */
-            $logger->pushHandler(new StreamHandler("php://stdout"));
+            $logger->pushHandler(new StreamHandler("php://stdout")); // @phpstan-ignore-line
         }
 
         if (App::runningInConsole()) {
