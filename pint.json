@@ -1,0 +1,42 @@
+{
+    "preset": "psr12",
+    "rules": {
+        "@PSR12": true,
+        "@PHP80Migration": true,
+        "strict_param": true,
+        "array_syntax": {
+            "syntax": "short"
+        },
+        "binary_operator_spaces": {
+            "operators": {
+                "=": "align_single_space_minimal",
+                "=>": "align_single_space_minimal"
+            }
+        },
+        "braces": {
+            "position_after_functions_and_oop_constructs": "next"
+        },
+        "phpdoc_indent": true,
+        "no_blank_lines_after_phpdoc": true,
+        "class_attributes_separation": {
+            "elements": {
+                "const": "only_if_meta",
+                "method": "one",
+                "property": "one",
+                "trait_import": "only_if_meta",
+                "case": "only_if_meta"
+            }
+        }
+    },
+    "exclude": [
+        "config",
+        "database",
+        "lang",
+        "resources",
+        "routes",
+        "tests"
+    ],
+    "notName": [
+        "*.blade.php"
+    ]
+}
