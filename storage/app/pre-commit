@@ -18,7 +18,7 @@ function __run() #(step, name, cmd)
 
 	if [[ "$3" == *"PHP Cs Fixer"* ]]; then
 		for file in $files; do
-			php vendor/bin/php-cs-fixer fix --path=$file --quiet
+			php vendor/bin/pint $file --quiet
 		done
 	else
 		output=$(eval "$3" 2>&1)
@@ -36,9 +36,9 @@ function __run() #(step, name, cmd)
 
 modified="git diff --diff-filter=M --name-only --cached  | grep \".php$\""
 ignore="resources/lang,resources/views,bootstrap/helpers,database/migrations,bin"
-phpcs="php vendor/bin/php-cs-fixer fix app --quiet"
+phpcs="php vendor/bin/pint app --quiet"
 
-__run "1/2" "PHP Cs Fixer" "${phpcs}"
+__run "1/2" "Laravel Pint" "${phpcs}"
 __run "2/2" "Laravel STAN" "${modified} | xargs -r vendor/bin/phpstan analyse"
 
 
