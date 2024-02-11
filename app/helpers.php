@@ -3,14 +3,13 @@
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 
-function user(string $guard = null): User|null
+function user(string $guard = null): ?User
 {
-    /** @var User|null $res */
-    $res = Auth::guard($guard ?: config('auth.defaults.guard'))->user();
-    return $res;
+    /** @var User|null */
+    return Auth::guard($guard ?: config('auth.defaults.guard'))->user();
 }
 
-function userId(string $guard = null): int|null
+function userId(string $guard = null): ?int
 {
     return user($guard)?->id;
 }
