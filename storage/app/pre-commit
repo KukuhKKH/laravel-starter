@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# get bash colors and styles here: 
+# get bash colors and styles here:
 # http://misc.flogisoft.com/bash/tip_colors_and_formatting
 C_RESET='\e[0m'
 C_RED='\e[31m'
@@ -33,6 +33,14 @@ function __run() #(step, name, cmd)
         exit 1
     fi
 }
+
+php_version=$(php -r "echo PHP_VERSION;")
+if [[ $php_version != "8.3"* ]]; then
+    for file in $files; do
+        git add $file
+    done
+    exit 0
+fi
 
 modified="git diff --diff-filter=M --name-only --cached  | grep \".php$\""
 ignore="resources/lang,resources/views,bootstrap/helpers,database/migrations,bin"
