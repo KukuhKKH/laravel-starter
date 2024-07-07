@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "edfe8ccce2f094a84e683625a01e83d2",
+    "content-hash": "eed10e960b91de596fd7e6447af7822e",
     "packages": [
         {
             "name": "banglipai/utility",
-            "version": "v1.2",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BangLipai/utility.git",
-                "reference": "c07779992242d5fb05795b9e7ab718f32b27a67e"
+                "reference": "412a0fe0f510c9cb2c85d23fb884db46fa0cb99b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BangLipai/utility/zipball/c07779992242d5fb05795b9e7ab718f32b27a67e",
-                "reference": "c07779992242d5fb05795b9e7ab718f32b27a67e",
+                "url": "https://api.github.com/repos/BangLipai/utility/zipball/412a0fe0f510c9cb2c85d23fb884db46fa0cb99b",
+                "reference": "412a0fe0f510c9cb2c85d23fb884db46fa0cb99b",
                 "shasum": ""
             },
             "require": {
@@ -56,9 +56,9 @@
             "description": "Utility Laravel Starter",
             "support": {
                 "issues": "https://github.com/BangLipai/utility/issues",
-                "source": "https://github.com/BangLipai/utility/tree/v1.2"
+                "source": "https://github.com/BangLipai/utility/tree/v1.2.1"
             },
-            "time": "2024-07-07T14:24:30+00:00"
+            "time": "2024-07-07T15:39:11+00:00"
         },
         {
             "name": "brick/math",
