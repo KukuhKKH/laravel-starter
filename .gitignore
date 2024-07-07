@@ -4,12 +4,11 @@
 /public/hot
 /public/storage
 /storage/*.key
-/storage/clockwork.sqlite
-/storage/generator
 /vendor
 .env
 .env.backup
 .env.production
+.phpactor.json
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -19,5 +18,3 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/.vagrant
-/.php-cs-fixer.cache
