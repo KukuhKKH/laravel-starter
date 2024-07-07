@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "banglipai/utility",
-            "version": "v1.1",
+            "version": "v1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BangLipai/utility.git",
-                "reference": "c182b809a91832380099faeb2d47dccbb0ae8154"
+                "reference": "c07779992242d5fb05795b9e7ab718f32b27a67e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BangLipai/utility/zipball/c182b809a91832380099faeb2d47dccbb0ae8154",
-                "reference": "c182b809a91832380099faeb2d47dccbb0ae8154",
+                "url": "https://api.github.com/repos/BangLipai/utility/zipball/c07779992242d5fb05795b9e7ab718f32b27a67e",
+                "reference": "c07779992242d5fb05795b9e7ab718f32b27a67e",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,19 @@
                 "illuminate/support": "8.12|^9.0|^10.0|^11.0"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BangLipai\\Utility\\ServiceProvider",
+                        "BangLipai\\Utility\\MigrationServiceProvider",
+                        "BangLipai\\Utility\\ResponseServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
                 "psr-4": {
                     "BangLipai\\Utility\\": "src/"
                 }
@@ -44,9 +56,9 @@
             "description": "Utility Laravel Starter",
             "support": {
                 "issues": "https://github.com/BangLipai/utility/issues",
-                "source": "https://github.com/BangLipai/utility/tree/v1.1"
+                "source": "https://github.com/BangLipai/utility/tree/v1.2"
             },
-            "time": "2024-02-09T03:28:03+00:00"
+            "time": "2024-07-07T14:24:30+00:00"
         },
         {
             "name": "brick/math",
