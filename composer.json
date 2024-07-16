@@ -9,7 +9,8 @@
         "banglipai/utility": "^1.2",
         "itsgoingd/clockwork": "^5.2",
         "laravel/framework": "^11.9",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "yajra/laravel-auditable": "^11.0"
     },
     "require-dev": {
         "banglipai/laravel-generator": "2.0",
