@@ -85,6 +85,7 @@ return [
         |       'abstract'           => false,
         |       'prefix'             => '',
         |       'connection'         => null,
+        |       'cast_method'        => false,
         |       'cast' => [
         |           'fld_*'          => 'date:Y-m-d',
         |           'field'          => 'date:H:i:s',
