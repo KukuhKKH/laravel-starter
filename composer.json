@@ -10,6 +10,7 @@
         "itsgoingd/clockwork": "^5.2",
         "laravel/framework": "^11.32",
         "laravel/tinker": "^2.10",
+        "spatie/laravel-data": "^4.11",
         "yajra/laravel-auditable": "^11.0"
     },
     "require-dev": {
