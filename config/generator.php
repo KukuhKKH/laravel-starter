@@ -7,7 +7,8 @@ return [
     |--------------------------------------------------------------------------
     |   ['table-1', 'table-2', 'table-n']
     */
-    'only'        => [],
+    'only'        => [
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -19,16 +20,13 @@ return [
         '_*',
         'clockwork',
         'failed_jobs',
-        'grup_anggota',
         'grup_akses',
         'job_batches',
         'jobs',
         'm_akses',
-        'm_grup',
         'migrations',
         'password_reset_tokens',
         'personal_access_tokens',
-        'routes',
         'route_akses',
         'user_akses',
         'user_grup',
@@ -67,7 +65,8 @@ return [
         |--------------------------------------------------------------------------
         |   ['table-1', 'table-2', 'table-n']
         */
-        'only'    => [],
+        'only'    => [
+        ],
 
         /*
         |--------------------------------------------------------------------------
@@ -86,19 +85,18 @@ return [
         |       'abstract'           => false,
         |       'prefix'             => '',
         |       'connection'         => null,
+        |       'cast_method'        => false,
         |       'cast' => [
         |           'fld_*'          => 'date:Y-m-d',
         |           'field'          => 'date:H:i:s',
         |       ],
         |       'fill_key'           => false,
-        |       'where_field'        => true,
+        |       'where_field'        => false,
         |       'relation_docstring' => true,
         |       'trait'              => [],
         |   ]
         */
         'default' => [
-            'where_field'        => false,
-            'relation_docstring' => true,
         ],
     ],
 
@@ -126,7 +124,8 @@ return [
         |--------------------------------------------------------------------------
         |   ['table-1', 'table-2', 'table-n']
         */
-        'only'    => [],
+        'only'    => [
+        ],
 
         /*
         |--------------------------------------------------------------------------
@@ -134,14 +133,16 @@ return [
         |--------------------------------------------------------------------------
         |   ['failed_jobs', 'migrations', 'password_resets']
         */
-        'except'  => [],
+        'except'  => [
+        ],
 
         /*
         |--------------------------------------------------------------------------
         | Default Configuration
         |--------------------------------------------------------------------------
         */
-        'default' => [],
+        'default' => [
+        ],
     ],
 
     /*
@@ -151,12 +152,6 @@ return [
     | <singular> = <plural> : Custom mapping (default use Str::singular and Str::singular)
     */
     'plural'      => [
-        'grup_anggota' => 'grup_anggota',
-        'grup_akses'   => 'grup_akses',
-        'm_akses'      => 'm_akses',
-        'routes'       => 'routes',
-        'route_akses'  => 'route_akses',
-        'user_akses'   => 'user_akses',
     ],
 
     /*
@@ -213,18 +208,6 @@ return [
     | <table-name>.jsonapi.child_data.<...> : Any other child table name
     */
     'options'     => [
-        'users' => [
-            'model' => [
-                'base'  => ['Illuminate\Foundation\Auth\User', 'Authenticatable'],
-                'trait' => [
-                    'Yajra\Auditable\AuditableWithDeletesTrait',
-                    'Laravel\Sanctum\HasApiTokens',
-                    'Illuminate\Database\Eloquent\Factories\HasFactory',
-                    'Illuminate\Notifications\Notifiable',
-                    'Illuminate\Database\Eloquent\SoftDeletes',
-                ],
-            ],
-        ],
     ],
 
     /*
