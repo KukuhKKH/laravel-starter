@@ -13568,9 +13568,9 @@ namespace Illuminate\Support\Facades {
          * @param array|null $meta
          * @return array 
          * @static 
-         */        public static function formatFailure($message, $data, $code, $meta)
+         */        public static function formatError($message, $data, $code, $meta)
         {
-                        return \Illuminate\Routing\ResponseFactory::formatFailure($message, $data, $code, $meta);
+                        return \Illuminate\Routing\ResponseFactory::formatError($message, $data, $code, $meta);
         }
                     /**
          * 
@@ -19034,9 +19034,9 @@ namespace Illuminate\Routing {
          * @param array|null $meta
          * @return array 
          * @static 
-         */        public static function formatFailure($message, $data, $code, $meta)
+         */        public static function formatError($message, $data, $code, $meta)
         {
-                        return \Illuminate\Routing\ResponseFactory::formatFailure($message, $data, $code, $meta);
+                        return \Illuminate\Routing\ResponseFactory::formatError($message, $data, $code, $meta);
         }
                     /**
          * 
